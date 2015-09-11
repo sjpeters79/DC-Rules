@@ -6,6 +6,7 @@ Vagrant.require_version ">= 1.7.2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.host_name = 'cd6a4c39-a45e-42ec-97bf-23544ee4674d.dropfort.com'
   config.vm.box = "puppetlabs/centos-7.0-64-puppet"
+  config.vm.box_version = "< 1.0.2"
   
   config.vm.network :forwarded_port, guest: 35729, host: 35729, protocol: "tcp"	# Livereload
   config.vm.network :forwarded_port, guest: 80, host: 8080, protocol: "tcp"	# Apache HTTP
